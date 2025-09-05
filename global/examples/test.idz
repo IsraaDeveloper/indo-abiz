@@ -1,0 +1,82 @@
+# Variabel
+literali angka = 10
+konstanta teks = "Halo Dunia"
+
+katakan "=== Tes Variabel ==="
+katakan angka
+katakan teks
+
+# Percabangan
+katakan "=== Tes Jika / Jikatidak ==="
+jika(angka > 5) {
+    katakan "Angka lebih besar dari 5"
+} jikatidak {
+    katakan "Angka kecil atau sama dengan 5"
+}
+
+# Switch-case
+katakan "=== Tes Pilih / Kasus ==="
+pilih(angka) {
+    kasus 5:
+        katakan "Angka adalah 5"
+        berhenti
+    kasus 10:
+        katakan "Angka adalah 10"
+        berhenti
+    bawaan:
+        katakan "Angka tidak diketahui"
+}
+
+# Loop for
+katakan "=== Tes Ulang (for) ==="
+ulang(literali i = 0; i < 3; i++) {
+    katakan i
+}
+
+# While
+katakan "=== Tes Selama (while) ==="
+literali j = 0
+selama(j < 3) {
+    katakan j
+    j = j + 1
+}
+
+# For of
+katakan "=== Tes Untuk x di arr ==="
+literali arr = [1, 2, 3]
+untuk item di arr {
+    katakan item
+}
+
+# Fungsi biasa
+katakan "=== Tes Fungsi ==="
+fungsi tambah(a, b) {
+    balikin a + b
+}
+katakan tambah(7, 8)
+
+# Fungsi async + await
+katakan "=== Tes Fungsi Async / Tunggu ==="
+fungsi cobaAsync() async {
+    tunggu sabar(1000) {
+        katakan "Halo setelah 1 detik"
+    }
+}
+cobaAsync()
+
+# Try-catch
+katakan "=== Tes Coba Tangkap ==="
+coba {
+    katakan salahVariable
+} tangkap(err) {
+    katakan "Terjadi error"
+}
+
+# Boolean
+katakan "=== Tes Boolean ==="
+literali kondisi = benar
+jika(kondisi) {
+    katakan "Ini true"
+} jikatidak {
+    katakan "Ini false"
+}
