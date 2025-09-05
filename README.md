@@ -7,26 +7,42 @@ Contoh: `examples/test.idz`
 
 ## 🚀 Fitur Bahasa
 
-| Sintaks `.idz`               | JavaScript yang dihasilkan        |
-| ---------------------------- | --------------------------------- |
-| `katakan "teks"`             | `console.log("teks")`             |
-| `katakan variabel`           | `console.log(variabel)`           |
-| `jika(kondisi)`              | `if (kondisi)`                    |
-| `jikatidak`                  | `else`                            |
-| `bawaan:`                    | `default:`                        |
-| `ulang(init; kondisi; step)` | `for (init; kondisi; step)`       |
-| `selama(kondisi)`            | `while (kondisi)`                 |
-| `untuk x di arr`             | `for (let x of arr)`              |
-| `fungsi nama(...)`           | `function nama(...)`              |
-| `fungsi nama(...) async`     | `async function nama(...)`        |
-| `tunggu`                     | `await`                           |
-| `coba ... tangkap(err)`      | `try ... catch(err)`              |
-| `berhenti`                   | `break`                           |
-| `balikin`                    | `return`                          |
-| `betul`                      | `true`                            |
-| `salah`                      | `false`                           |
-| `ambil "modul"`              | `require("modul")`                |
-| `sabar(1000) { ... }`        | `setTimeout(() => { ... }, 1000)` |
+| Sintaks `.idz`               | JavaScript yang dihasilkan                      |
+| ---------------------------- | ---------------------------------               |
+| `katakan "teks"`             | `console.log("teks")`                           |
+| `katakan variabel`           | `console.log(variabel)`                         |
+| `jika(kondisi)`              | `if (kondisi)`                                  |
+| `jikatidak`                  | `else`                                          |
+| `bawaan:`                    | `default:`                                      |
+| `literali nama = nilai`      | `let nama = nilai`                              |
+| `konstanta nama = nilai`     | `const nama = nilai`                            |
+| `balikin`                    | `return`                                        |
+| `ulang(init; kondisi; step)` | `for (init; kondisi; step)`                     |
+| `selama(kondisi)`            | `while (kondisi)`                               |
+| `untuk item di array`        | `for (let item of array)`                       |
+| `benar`                      | `true`                                          |
+| `salah`                      | `false`                                         |
+| `pilih(expr)`                | `switch(expr)`                                  |
+| `kasus`                      | `case`                                          |
+| `berhenti`                   | `break`                                         |
+| `ambil "modul"`              | `require("modul")`                              |
+| `coba`                       | `try`                                           |
+| `tangkap(err)`               | `catch (err)`                                   |
+| `fungsi nama(...) async`     | `async function nama(...)`                      |
+| `fungsi nama(...)`           | `function nama(...)`                            |
+| `tunggu`                     | `await`                                         |
+| `sabar(1000) { ... }`        | `setTimeout(() => { ... }, 1000)`               |
+| `x dan y`                    | `x && y`                                        |
+| `x atau y`                   |                                                 |
+| `tidak x`                    | `!x`                                            |
+| `a lebihbesardari b`         | `a > b`                                         |
+| `a lebihkecildari b`         | `a < b`                                         |
+| `a sama b`                   | `a === b`                                       |
+| `acak(1, 100)`               | `Math.floor(Math.random() * (100 - 1 + 1)) + 1` |
+| `panjang arr`                | `arr.length`                                    |
+| `baca "file.txt"`            | `fs.readFileSync("file.txt", "utf-8")`          |
+| `tulis "file.txt", data`     | `fs.writeFileSync("file.txt", data)`            |
+
 
 Komentar menggunakan `# ...`
 
@@ -36,7 +52,7 @@ Komentar menggunakan `# ...`
 
 ## 🚀 Auto Install
 ```
-node installer.js
+node ./global/installer.js
 ```
 
 ## 🎯 Manual Install
@@ -53,9 +69,9 @@ cd indo-abiz
 npm install
 ```
 
-### 3. Global Command (`ach`)
+### 3. Global Command (`idz`)
 
-Agar bisa dipanggil langsung dengan perintah `ach`, jalankan:
+Agar bisa dipanggil langsung dengan perintah `idz`, jalankan:
 
 ```sh
 npm link
@@ -69,7 +85,7 @@ sudo npm link
 
 ---
 
-## ▶️ Cara Menjalankan File `.ach`
+## ▶️ Cara Menjalankan File `.idz`
 
 ### Default (tanpa argumen)
 
@@ -77,54 +93,54 @@ sudo npm link
 ach
 ```
 
-👉 otomatis menjalankan `examples/test.ach`
+👉 otomatis menjalankan `global/examples/test.idz`
 
 ### Menentukan file
 
 ```sh
-ach examples/test.ach
+ach global/examples/test.idz
 ```
 
 ### Validasi
 
-* Hanya file dengan ekstensi `.ach` yang bisa dijalankan.
-* Jika bukan `.ach`, akan muncul error:
+* Hanya file dengan ekstensi `.idz` yang bisa dijalankan.
+* Jika bukan `.ids`, akan muncul error:
 
   ```
-  Error: Hanya file dengan ekstensi .ach yang bisa dijalankan!
+  Error: Hanya file dengan ekstensi .idz yang bisa dijalankan!
   ```
 
 ---
 
 ## 🛠️ Contoh Program
 
-**`examples/test.ach`**
+**`global/examples/test.idz`**
 
-```ach
+```idz
 # Contoh program
-let angka = 5
+literali angka = 5
 
-meunyoe(angka > 3) {
-    kheun "Angka lebih besar dari 3"
-} laen {
-    kheun "Angka kecil atau sama dengan 3"
+jika(angka > 3) {
+    katakan "Angka lebih besar dari 3"
+} jikatidak {
+    katakan "Angka kecil atau sama dengan 3"
 }
 
-ulang(let i = 0; i < 5; i++) {
-    kheun i
+ulang(literali i = 0; i < 5; i++) {
+    katakan i
 }
 
 fungsi tambah(a, b) {
-    balek a + b
+    balikin a + b
 }
 
-kheun tambah(2, 3)
+katakan tambah(2, 3)
 ```
 
 Jalankan:
 
 ```sh
-ach examples/test.ach
+ach global/examples/test.idz
 ```
 
 Output:
@@ -143,71 +159,137 @@ Angka lebih besar dari 3
 
 ## 📜 Dokumentasi Kode yang Bisa Digunakan
 
-### Variabel
+# Dokumentasi Bahasa `.idz`
 
-```ach
-let nama = "Israa"
-konst umur = 20
+Berikut adalah contoh penggunaan semua fitur dalam bahasa `.idz`:
+
+---
+
+### Cetak ke Layar
+
+```idz
+katakan "Halo Dunia"
+katakan angka
 ```
+
+---
 
 ### Percabangan
 
-```ach
-meunyoe(umur >= 18) {
-    kheun "Dewasa"
-} laen {
-    kheun "Anak-anak"
+```idz
+jika(angka > 10) {
+    katakan "Lebih besar"
+} jikatidak {
+    katakan "Lebih kecil atau sama"
 }
 ```
 
+---
+
 ### Perulangan
 
-```ach
-ulang(let i = 0; i < 3; i++) {
-    kheun i
+```idz
+ulang(literali i = 0; i < 3; i++) {
+    katakan i
 }
 
 selama(umur > 0) {
-    kheun umur
+    katakan umur
     umur = umur - 1
 }
 
 untuk item di [1,2,3] {
-    kheun item
+    katakan item
 }
 ```
+
+---
 
 ### Fungsi
 
-```ach
-fungsi halo(nama) {
-    kheun `Halo ${nama}`
+```idz
+fungsi tambah(a, b) {
+    balikin a + b
 }
 
-halo("Dunia")
+katakan tambah(5, 7)
 ```
 
-### Async/Await
+---
 
-```ach
-fungsi ambilData() async {
-    preh saba(1000) {
-        kheun "Selesai menunggu 1 detik"
+### Asynchronous
+
+```idz
+fungsi tes() async {
+    tunggu sabar(1000) {
+        katakan "Halo setelah 1 detik"
     }
 }
-
-ambilData()
 ```
 
-### Try/Catch
+---
 
-```ach
-ci {
-    kheun tidakAda
-} drob(err) {
-    kheun "Error: " + err
+### Switch / Case
+
+```idz
+pilih(angka) {
+    kasus 1:
+        katakan "Satu"
+        berhenti
+    kasus 2:
+        katakan "Dua"
+        berhenti
+    bawaan:
+        katakan "Lainnya"
 }
 ```
+
+---
+
+### Error Handling
+
+```idz
+coba {
+    katakan variabel_tak_ada
+} tangkap(err) {
+    katakan "Terjadi error"
+}
+```
+
+---
+
+### File
+
+```idz
+tulis "data.txt", "Halo dari IndoLang"
+katakan baca "data.txt"
+```
+
+---
+
+### Operator
+
+```idz
+jika(angka lebihbesardari 5 dan angka lebihkecildari 10) {
+    katakan "Di antara 5 dan 10"
+}
+
+jika(tidak salah) {
+    katakan "Benar"
+}
+```
+
+---
+
+### Random & Utility
+
+```idz
+katakan acak(1, 100)
+
+literali nama = "Indolang"
+katakan panjang nama
+```
+
 
 ---
 
