@@ -1,5 +1,9 @@
 const { execSync } = require('child_process');
 
+console.log("📩 Cloning Github Repositori...")
+try {
+    execSync('git clone ')
+}
 console.log("📦 Menjalankan npm install...");
 try {
     execSync('npm install', { stdio: 'inherit' });
@@ -16,3 +20,4 @@ try {
     console.error("❌ Gagal menjalankan npm link. Coba pakai sudo di Linux/Mac.");
     process.exit(1);
 }
+
