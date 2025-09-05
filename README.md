@@ -56,7 +56,7 @@ Komentar menggunakan `# ...`
 git clone https://github.com/IsraaDeveloper/indo-abiz.git
 cd indo-abiz
 ```
-## 2. Jalankan Auto Installer
+### 2. Jalankan Auto Installer
 ```
 node ./global/installer.js
 ```
