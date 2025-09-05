@@ -2,7 +2,10 @@ const { execSync } = require('child_process');
 
 console.log("📩 Cloning Github Repositori...")
 try {
-    execSync('git clone ')
+    execSync('git clone https://github.com/IsraaDeveloper/indo-abiz.git', { stdio: 'inherit' });
+} catch (e) {
+    console.error("❌ Gagal menjalankan git clone")
+    process.exit(1);
 }
 console.log("📦 Menjalankan npm install...");
 try {
@@ -20,4 +23,5 @@ try {
     console.error("❌ Gagal menjalankan npm link. Coba pakai sudo di Linux/Mac.");
     process.exit(1);
 }
+
 
