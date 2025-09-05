@@ -51,6 +51,12 @@ Komentar menggunakan `# ...`
 ## 📦 Instalasi
 
 ## 🚀 Auto Install
+### 1. Clone Repository
+```sh
+git clone https://github.com/IsraaDeveloper/indo-abiz.git
+cd indo-abiz
+```
+## 2. Jalankan Auto Installer
 ```
 node ./global/installer.js
 ```
