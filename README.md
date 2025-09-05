@@ -96,7 +96,7 @@ sudo npm link
 ### Default (tanpa argumen)
 
 ```sh
-ach
+idz
 ```
 
 👉 otomatis menjalankan `global/examples/test.idz`
@@ -104,7 +104,7 @@ ach
 ### Menentukan file
 
 ```sh
-ach global/examples/test.idz
+idz global/examples/test.idz
 ```
 
 ### Validasi
@@ -146,7 +146,7 @@ katakan tambah(2, 3)
 Jalankan:
 
 ```sh
-ach global/examples/test.idz
+idz global/examples/test.idz
 ```
 
 Output:
